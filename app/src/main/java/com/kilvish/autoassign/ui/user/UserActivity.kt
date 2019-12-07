@@ -9,7 +9,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.kilvish.autoassign.R
 import com.kilvish.autoassign.databinding.ActivityUserBinding
+import com.kilvish.autoassign.utils.Utils
 import dagger.android.AndroidInjection
+import kotlinx.android.synthetic.main.error_layout.*
+import kotlinx.android.synthetic.main.user_init_layout.*
 import javax.inject.Inject
 
 class UserActivity : AppCompatActivity() {
@@ -30,6 +33,26 @@ class UserActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_user)
         binding.lifecycleOwner = this
         observeAgentViewModel()
+        setOnClickListener()
+    }
+
+    private fun setOnClickListener() {
+        carloan.setOnClickListener { submitApplicationRequest(Utils.CARLOAN) }
+        homeloan.setOnClickListener { submitApplicationRequest(Utils.HOMELOAN) }
+        eduloan.setOnClickListener { submitApplicationRequest(Utils.EDUCATIONLOAN) }
+        retry_button.setOnClickListener { viewModel.postInitialState() }
+    }
+
+    private fun submitApplicationRequest(type: String){
+        viewModel.submitApplicationData(
+            type = type,
+            custTitle = Utils.getRandomString(2, Utils.STRING_CHARACTERS),
+            pannumber = Utils.getRandomString(10, Utils.INT_CHARACTERS),
+            custName = Utils.getRandomString(16, Utils.STRING_CHARACTERS),
+            dob = Utils.getRandomString(8, Utils.INT_CHARACTERS),
+            aadharNumber = Utils.getRandomString(16, Utils.INT_CHARACTERS)
+
+        )
     }
 
     private fun observeAgentViewModel() {

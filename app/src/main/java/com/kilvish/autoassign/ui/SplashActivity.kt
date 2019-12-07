@@ -18,12 +18,17 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun initTests(){
-        setLaunchIntentOnButton(launchAgentDemo, AgentActivity::class.java)
-        setLaunchIntentOnButton(launchUserDemo, UserActivity::class.java)
+        setUserLaunch(launchUserDemo, UserActivity::class.java)
+        setUserLaunch(launchAgentDemoHL, "HomeLoan")
+        setUserLaunch(launchAgentDemoPL, "PersonalLoan")
     }
 
-    private fun setLaunchIntentOnButton(button: Button, cls: Class<*>){
+    private fun setUserLaunch(button: Button, cls: Class<*>){
         button.setOnClickListener { startActivity(Intent(this, cls)) }
+    }
+
+    private fun setUserLaunch(button: Button, type: String){
+        button.setOnClickListener { startActivity(AgentActivity.newInstance(this, type)) }
     }
 
 }

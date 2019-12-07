@@ -2,4 +2,11 @@
     <string name="app_name">AutoAssign</string>
     <string name="something_wrong">Something went wrong at our end</string>
     <string name="retry">RETRY</string>
+    <string name="submit">SUBMIT</string>
+    <string name="approve">APPROVE</string>
+    <string name="reject">REJECT</string>
+    <string name="auto_assign">AUTO ASSIGN</string>
+    <string name="auto_assign_text">Tap below to auto assign the request</string>
+    <string name="client_text">Tap below to raise loan request the request</string>
+
 </resources>

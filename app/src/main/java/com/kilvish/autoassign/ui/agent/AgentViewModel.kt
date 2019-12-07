@@ -17,9 +17,13 @@ class AgentViewModel @Inject constructor(
 
     fun getAgentState() = viewState
 
-    fun fetchAgentData(id: String, doc: String) {
+    fun postInitialState() {
+        viewState.postValue(InitialState)
+    }
+
+    fun fetchAgentData(type: String) {
         viewState.postValue(LoadingState)
-        val disposableSingleObserver = agentRepo.getAutoAssignData(id, doc)
+        val disposableSingleObserver = agentRepo.getAutoAssignData(type)
             .subscribeOn(Schedulers.io())
             .subscribe({
                 viewState.postValue(SuccessState(it))

@@ -17,9 +17,20 @@ class UserViewModel @Inject constructor(
 
     fun getUserViewState() = viewState
 
-    fun submitApplicationData(id: String, doc: String) {
+    fun postInitialState() {
+        viewState.postValue(InitialState)
+    }
+
+    fun submitApplicationData(
+        type: String,
+        custTitle: String,
+        pannumber: String,
+        dob: String,
+        aadharNumber: String,
+        custName: String
+    ) {
         viewState.postValue(LoadingState)
-        val disposableSingleObserver = userRepo.submitApplication(id, doc)
+        val disposableSingleObserver = userRepo.submitApplication(type, custTitle, pannumber, dob, aadharNumber, custName)
             .subscribeOn(Schedulers.io())
             .subscribe({
                 viewState.postValue(SuccessState(it))

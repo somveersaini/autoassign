@@ -11,8 +11,7 @@ data class AgentResponse (
 
 @Parcelize
 data class AgentData (
-    @SerializedName("id") val id: Int,
-    @SerializedName("name") val name: String,
-    @SerializedName("email") val email: String,
-    @SerializedName("roles") val roles: ArrayList<String>?
+    @SerializedName("id") val aid: String,
+    @SerializedName("type") val atype: String,
+    @SerializedName("params") val aparams: Map<String, String>
 ) : Parcelable

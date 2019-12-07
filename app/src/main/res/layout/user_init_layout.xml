@@ -1,6 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="enabled" type="boolean"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@color/error_bg"
+        app:goneUnless="@{enabled}">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/client_text"
+            android:textColor="@color/white"
+            android:layout_margin="16dp"
+            android:textSize="44sp"
+            android:fontFamily="sans-serif-thin"
+            android:text="@string/client_text"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <Button
+            android:id="@+id/homeloan"
+            android:text="HOME LOAN"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimary"
+            android:layout_margin="16dp"
+            app:layout_constraintTop_toBottomOf="@id/client_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/carloan"
+            android:text="CAR LOAN"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="44dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintTop_toBottomOf="@id/homeloan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/eduloan"
+            android:text="EDUCATION LOAN"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="44dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintTop_toBottomOf="@id/carloan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

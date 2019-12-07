@@ -9,11 +9,15 @@ class UserRepo (
     private val userService: UserService
 ){
     fun submitApplication(
-        id: String,
-        doc_type: String
+        type: String,
+        custTitle: String,
+        pannumber: String,
+        dob: String,
+        aadharNumber: String,
+        custName: String
     ): Single<UserApplicationResponseData> {
         return userService
-            .submitApplication(UserApplicationRequest(id, doc_type))
+            .submitApplication(UserApplicationRequest(type, custTitle, pannumber, dob, aadharNumber, custName))
             .flatMap { mapResponse(it) }
             .onErrorResumeNext { Single.error(it) }
     }

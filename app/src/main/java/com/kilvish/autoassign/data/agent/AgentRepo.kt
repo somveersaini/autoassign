@@ -8,11 +8,10 @@ import io.reactivex.Single
 class AgentRepo(val agentService: AgentService) {
 
     fun getAutoAssignData(
-        id: String,
-        doc_type: String
+        type: String
     ): Single<AgentData> {
         return agentService
-            .getAutoAssignData(AgentRequest(id, doc_type))
+            .getAutoAssignData(AgentRequest(type))
             .flatMap { mapResponse(it) }
             .onErrorResumeNext { Single.error(it) }
     }
