@@ -8,7 +8,7 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface UserService{
-    @POST("submitApplication")
+    @POST("submit")
     fun submitApplication(@Body request: UserApplicationRequest): Single<Response<UserApplicationResponse>>
 
 }

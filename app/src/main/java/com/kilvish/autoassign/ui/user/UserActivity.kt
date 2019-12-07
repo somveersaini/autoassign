@@ -3,6 +3,7 @@ package com.kilvish.autoassign.ui.user
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -32,6 +33,7 @@ class UserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_user)
         binding.lifecycleOwner = this
+        supportActionBar?.title = "LOAN APPLICATION"
         observeAgentViewModel()
         setOnClickListener()
     }
@@ -66,6 +68,11 @@ class UserActivity : AppCompatActivity() {
         if (state is SuccessState) renderList(state)    }
 
     private fun renderList(successState: SuccessState) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        with(successState.userAppResponseData){
+            val msg = if ("YES".equals(result)) {
+                "Congrats. Loan Granted!!!"
+            } else "Your Application is sent for approval"
+            Toast.makeText(this@UserActivity, msg, Toast.LENGTH_SHORT).show()
+        }
     }
 }

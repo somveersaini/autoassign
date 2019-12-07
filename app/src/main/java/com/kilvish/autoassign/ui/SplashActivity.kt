@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.kilvish.autoassign.R
 import com.kilvish.autoassign.ui.agent.AgentActivity
 import com.kilvish.autoassign.ui.user.UserActivity
+import com.kilvish.autoassign.utils.Utils
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
@@ -19,8 +20,10 @@ class SplashActivity : AppCompatActivity() {
 
     private fun initTests(){
         setUserLaunch(launchUserDemo, UserActivity::class.java)
-        setUserLaunch(launchAgentDemoHL, "HomeLoan")
-        setUserLaunch(launchAgentDemoPL, "PersonalLoan")
+        setUserLaunch(launchAgentDemoHL, Utils.HOMELOAN)
+        setUserLaunch(launchAgentDemoPL, Utils.CARLOAN)
+        setUserLaunch(launchAgentDemoEL, Utils.EDUCATIONLOAN)
+
     }
 
     private fun setUserLaunch(button: Button, cls: Class<*>){

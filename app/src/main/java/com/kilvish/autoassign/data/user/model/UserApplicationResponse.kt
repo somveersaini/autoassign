@@ -11,8 +11,5 @@ data class UserApplicationResponse (
 
 @Parcelize
 data class UserApplicationResponseData (
-    @SerializedName("id") val id: Int,
-    @SerializedName("name") val name: String,
-    @SerializedName("email") val email: String,
-    @SerializedName("roles") val roles: ArrayList<String>?
+    @SerializedName("result") val result: String
 ) : Parcelable

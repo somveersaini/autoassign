@@ -37,8 +37,8 @@ class AgentActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_agent)
         binding.lifecycleOwner = this
 
-
         val type = intent.getStringExtra(APP_TYPE) as String
+        supportActionBar?.title = type
         setOnClickListener(type)
         observeAgentViewModel()
     }

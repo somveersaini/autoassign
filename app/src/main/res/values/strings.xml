@@ -6,6 +6,7 @@
     <string name="approve">APPROVE</string>
     <string name="reject">REJECT</string>
     <string name="auto_assign">AUTO ASSIGN</string>
+    <string name="loan_application">LOAN APPLICATION</string>
     <string name="auto_assign_text">Tap below to auto assign the request</string>
     <string name="client_text">Tap below to raise loan request the request</string>
 

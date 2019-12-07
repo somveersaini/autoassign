@@ -11,7 +11,7 @@ class AgentRepo(val agentService: AgentService) {
         type: String
     ): Single<AgentData> {
         return agentService
-            .getAutoAssignData(AgentRequest(type))
+            .getAutoAssignData(type)
             .flatMap { mapResponse(it) }
             .onErrorResumeNext { Single.error(it) }
     }
