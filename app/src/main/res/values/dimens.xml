@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="match_constraint">0dp</dimen>
+
+    <!--Margin & Padding-->
+    <dimen name="gap_xxsmall">2dp</dimen>
+    <dimen name="gap_xsmall">4dp</dimen>
+    <dimen name="gap_msmall">6dp</dimen>
+    <dimen name="gap_small">8dp</dimen>
+    <dimen name="gap_medium">12dp</dimen>
+    <dimen name="gap_mid_large">14dp</dimen>
+    <dimen name="gap_large">16dp</dimen>
+    <dimen name="gap_semi_large">18dp</dimen>
+    <dimen name="gap_xlarge">20dp</dimen>
+    <dimen name="gap_xxlarge">24dp</dimen>
+    <dimen name="gap_xxxlarge">32dp</dimen>
+    <dimen name="gap_xxxxlarge">36dp</dimen>
+    <dimen name="gap_xxxxxlarge">56dp</dimen>
+
+    <!--TextSize-->
+    <dimen name="text_line_spacing">4sp</dimen>
+    <dimen name="text_line_spacing_medium">8sp</dimen>
+    <dimen name="text_size_xsmall">12sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_semi_medium">15sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_xlarge">20sp</dimen>
+    <dimen name="text_size_xxlarge">22sp</dimen>
+    <dimen name="text_size_xxxlarge">24sp</dimen>
+    <dimen name="text_zero_width">0dp</dimen>
+    <dimen name="button_corner_radius">4dp</dimen>
+
+
+    <dimen name="divider_zero_width">0dp</dimen>
+    <dimen name="gutter_height">8dp</dimen>
+    <dimen name="zero_height_container">0dp</dimen>
+    <dimen name="feedback_divider_top_margin">48dp</dimen>
+    <dimen name="submit_button_height">48dp</dimen>
+    <dimen name="gap_multiselect_divider">36dp</dimen>
+    <dimen name="zero_width_container">0dp</dimen>
+    <dimen name="calendar_button_width">24dp</dimen>
+    <dimen name="textarea_height">80dp</dimen>
+    <dimen name="text_view_zero_dimension">0dp</dimen>
+    <dimen name="document_form_photo_length">90dp</dimen>
+    <dimen name="country_code_flag_image_width">28dp</dimen>
+    <dimen name="country_code_flag_image_height">28dp</dimen>
+    <dimen name="check_box_width">24dp</dimen>
+    <dimen name="check_box_height">24dp</dimen>
+
+    <dimen name="line_spacing">4sp</dimen>
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="overlay_progress_elevation">4dp</dimen>
+    <dimen name="progressbar_size">48dp</dimen>
+    <dimen name="separator_height">1dp</dimen>
+    <dimen name="separator_margin">50dp</dimen>
+
+    <dimen name="clear_button_size">24dp</dimen>
+    <dimen name="clear_button_margin">60dp</dimen>
+    <dimen name="edit_text_height">40dp</dimen>
+    <dimen name="stroke_width">2dp</dimen>
+    <dimen name="city_selection_clear_button_margin_left">2dp</dimen>
+
+</resources>
