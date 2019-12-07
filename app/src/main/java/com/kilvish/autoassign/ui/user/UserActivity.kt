@@ -65,6 +65,7 @@ class UserActivity : AppCompatActivity() {
     private fun render(state: UserViewState) {
         binding.viewState = state
         Log.d("viewState", state.toString())
+        if (state is ErrorState) Toast.makeText(this, state.errorMessage, Toast.LENGTH_SHORT).show()
         if (state is SuccessState) renderList(state)    }
 
     private fun renderList(successState: SuccessState) {

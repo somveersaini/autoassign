@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -58,6 +59,7 @@ class AgentActivity : AppCompatActivity() {
     private fun render(state: AgentViewState) {
         binding.viewState = state
         Log.d("viewState", state.toString())
+        if (state is ErrorState) Toast.makeText(this, state.errorMessage, Toast.LENGTH_SHORT).show()
         if (state is SuccessState) renderList(state)    }
 
     private fun renderList(successState: SuccessState) {

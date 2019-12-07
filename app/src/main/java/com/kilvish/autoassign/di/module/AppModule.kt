@@ -26,7 +26,7 @@ class AppModule {
         return Retrofit
             .Builder()
             .client(httpClient)
-            .baseUrl("http://172.20.4.13:80/")
+            .baseUrl("http://172.20.4.13:8222/")
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
