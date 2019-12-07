@@ -20,7 +20,7 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(AgentViewModel::class)
-    abstract fun bindUserViewModel(agentViewModel: AgentViewModel): ViewModel
+    abstract fun bindAgentrViewModel(agentViewModel: AgentViewModel): ViewModel
 
 
     @Binds

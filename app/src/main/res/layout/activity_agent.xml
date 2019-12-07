@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.agent.AgentActivity">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.kilvish.autoassign.ui.agent.InitialState"/>
+        <import type="com.kilvish.autoassign.ui.agent.ErrorState"/>
+        <import type="com.kilvish.autoassign.ui.agent.SuccessState"/>
+        <import type="com.kilvish.autoassign.ui.agent.LoadingState"/>
+        <variable name="viewState" type="com.kilvish.autoassign.ui.agent.AgentViewState"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/agent_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <include android:id="@+id/init"
+            bind:enabled="@{viewState instanceof InitialState}"
+            layout="@layout/agent_init_layout"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <include android:id="@+id/content"
+            bind:enabled="@{viewState instanceof SuccessState}"
+            layout="@layout/agent_content_layout"/>
+
+        <include android:id="@+id/loading_view"
+            layout="@layout/loading_layout"
+            bind:enabled="@{viewState instanceof LoadingState}"/>
+
+        <include android:id="@+id/error_view"
+            bind:enabled="@{viewState instanceof ErrorState}"
+            layout="@layout/error_layout"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -13,9 +13,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-abstract class AppModule {
-    @Binds
-    abstract fun bindContext(application: Application): Context
+class AppModule {
+    @Provides
+    fun bindContext(application: Application): Context = application
 
     @Provides
     @Singleton
@@ -26,7 +26,7 @@ abstract class AppModule {
         return Retrofit
             .Builder()
             .client(httpClient)
-            .baseUrl("localhost")
+            .baseUrl("http://localhost:8080/")
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
